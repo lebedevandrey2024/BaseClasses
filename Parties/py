@@ -1,0 +1,63 @@
+
+class PoliticalParty:
+    def __init__(self, full_name, short_name, ideology, support_percentage):
+        self.full_name = full_name          # Полное название партии
+        self.short_name = short_name        # Сокращенное название партии
+        self.ideology = ideology            # Идеология партии
+        self.support_percentage = support_percentage  # Поддержка населения в %
+
+    def __str__(self):
+        return f"{self.full_name} ({self.short_name}) - Идеология: {self.ideology}, Поддержка: {self.support_percentage}%"
+
+    def update_support(self, new_support):
+        """Обновляет поддержку населения."""
+        if 0 <= new_support <= 100:
+            self.support_percentage = new_support
+        else:
+            print("Ошибка: Поддержка должна быть в диапазоне от 0 до 100.")
+
+
+class PoliticalSystem:
+    def __init__(self):
+        self.parties = []  # Список политических партий
+
+    def add_party(self, party):
+        """Добавляет партию в систему."""
+        self.parties.append(party)
+        if not self.check_total_support():
+            print("Внимание: Сумма поддержки всех партий не равна 100%.")
+
+    def check_total_support(self):
+        """Проверяет, что сумма поддержки всех партий равна 100%."""
+        total_support = sum(party.support_percentage for party in self.parties)
+        return total_support == 100
+
+    def show_parties(self):
+        """Отображает информацию о всех партиях."""
+        print("Список политических партий:")
+        for party in self.parties:
+            print(party)
+
+
+# Пример использования:
+if __name__ == "__main__":
+    political_system = PoliticalSystem()
+
+    # Партии с корректным распределением поддержки
+    party1 = PoliticalParty("Коммунистическая партия", "КПР", "Коммунизм", 10)
+    party2 = PoliticalParty("Либеральная партия", "ЛПР", "Либерализм", 10)
+    party3 = PoliticalParty("Центристская партия", "ЦПР", "Центризм", 50)
+    party4 = PoliticalParty("Национальная партия", "НПР", "Национализм", 10)
+    party5 = PoliticalParty("Единая партия", "ЕПР", "Национал-демократия", 10)
+    party6 = PoliticalParty("Социал-демократическая партия", "СДПР", "Социал-демократия", 10)
+
+    # Добавление партий в систему
+    political_system.add_party(party1)
+    political_system.add_party(party2)
+    political_system.add_party(party3)
+    political_system.add_party(party4)
+    political_system.add_party(party5)
+    political_system.add_party(party6)  # Сумма поддержки не равна 100% - предупредит!
+
+    # Отображение всех партий
+    political_system.show_parties()
