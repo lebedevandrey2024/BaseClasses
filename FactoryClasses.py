@@ -6,7 +6,7 @@ class Factory():
     
     self.Effective
     
-    self.Type
+    self.TypeOfResource 
     
     self.Level #от 1 до 10
     
@@ -32,15 +32,45 @@ class FarmFactory(Factory):
     
     self.StockCapacityMaxExport = 24 * self.level
     self.EfficiencyLossRate = 10 # недель это для теста
-
+    self.TypeOfResourceExport = "Урожай"
+#########################################################
 class IronMineFactory(Factory):
   def ___init___(.self):
-    self.SoilQuality
+    self.MiningOfResource
     
     self.StockCapacityMaxExport = 50 * self.level
     self.EfficiencyLossRate = 10 # недель это для теста
-    
+    self.TypeOfResourceExport = "Железная Руда"
 
+class CoalMineFactory(Factory):
+  def ___init___(.self):
+    self.MiningOfResource
+    
+    self.StockCapacityMaxExport = 50 * self.level
+    self.EfficiencyLossRate = 10 # недель это для теста
+    self.TypeOfResourceExport = "Угольная Руда"
+#########################################################
+class FoodFactory(Factory):
+  def ___init___(.self):
+    self.StockCapacityMaxExport = 24 * self.level
+    self.EfficiencyLossRate = 10 # недель это для теста
+    self.TypeOfResourceImport = "Урожай"
+    self.TypeOfResourceExport = "Пища"
+    
+class BeerFactory(Factory):
+  def ___init___(.self):
+    self.StockCapacityMaxExport = 24 * self.level
+    self.EfficiencyLossRate = 10 # недель это для теста
+    self.TypeOfResourceImport = "Урожай"
+    self.TypeOfResourceExport = "Пиво"
+
+class MeatFactory(Factory):
+  def ___init___(.self):
+    self.StockCapacityMaxExport = 24 * self.level
+    self.EfficiencyLossRate = 10 # недель это для теста
+    self.TypeOfResourceImport = "Урожай"
+    self.TypeOfResourceExport = "Mясо"
+#########################################################
 
 
 
