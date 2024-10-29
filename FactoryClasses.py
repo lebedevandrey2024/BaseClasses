@@ -6,7 +6,8 @@ class Factory():
     
     self.Effective
     
-    self.TypeOfResource 
+    self.TypeOfResourceExport
+    self.TypeOfResourceExportNumber
     
     self.Level #от 1 до 10
     
@@ -23,7 +24,8 @@ class Factory():
     if self.EfficiencyLossCounter >= self.EfficiencyLossRate:
       self.Effective -= 0.01
 
-
+  def ProductionProcess():
+    self.TypeOfResourceExport += 1 * self.EfficiencyLossCounter * self.level
 
 
 class FarmFactory(Factory):
@@ -56,6 +58,12 @@ class FoodFactory(Factory):
     self.EfficiencyLossRate = 10 # недель это для теста
     self.TypeOfResourceImport = "Урожай"
     self.TypeOfResourceExport = "Пища"
+    self.TypeOfResourceImportNumber = 0
+
+  def ProductionProcess():
+    if self.TypeOfResourceImport >= 1 * self.EfficiencyLossCounter * self.level:
+      self.TypeOfResourceImport -= 1 * self.EfficiencyLossCounter * self.level
+      self.TypeOfResourceExport += 1 * self.EfficiencyLossCounter * self.level
     
 class BeerFactory(Factory):
   def ___init___(.self):
@@ -63,13 +71,28 @@ class BeerFactory(Factory):
     self.EfficiencyLossRate = 10 # недель это для теста
     self.TypeOfResourceImport = "Урожай"
     self.TypeOfResourceExport = "Пиво"
+    self.TypeOfResourceImportNumber = 0
 
+
+  def ProductionProcess():
+    if self.TypeOfResourceImport >= 1 * self.EfficiencyLossCounter * self.level:
+      self.TypeOfResourceImport -= 1 * self.EfficiencyLossCounter * self.level
+      self.TypeOfResourceExport += 1 * self.EfficiencyLossCounter * self.level
+    
 class MeatFactory(Factory):
   def ___init___(.self):
     self.StockCapacityMaxExport = 24 * self.level
     self.EfficiencyLossRate = 10 # недель это для теста
     self.TypeOfResourceImport = "Урожай"
     self.TypeOfResourceExport = "Mясо"
+    self.TypeOfResourceImportNumber = 0
+
+
+  def ProductionProcess():
+    if self.TypeOfResourceImport >= 1 * self.EfficiencyLossCounter * self.level:
+      self.TypeOfResourceImport -= 1 * self.EfficiencyLossCounter * self.level
+      self.TypeOfResourceExport += 1 * self.EfficiencyLossCounter * self.level
+    
 #########################################################
 
 
