@@ -7,7 +7,6 @@ class Factory():
     self.Effective
     
     self.TypeOfResourceExport
-    self.TypeOfResourceExportNumber
     
     self.Level #от 1 до 10
     
@@ -58,7 +57,6 @@ class FoodFactory(Factory):
     self.EfficiencyLossRate = 10 # недель это для теста
     self.TypeOfResourceImport = "Урожай"
     self.TypeOfResourceExport = "Пища"
-    self.TypeOfResourceImportNumber = 0
 
   def ProductionProcess():
     if self.TypeOfResourceImport >= 1 * self.EfficiencyLossCounter * self.level:
@@ -71,7 +69,6 @@ class BeerFactory(Factory):
     self.EfficiencyLossRate = 10 # недель это для теста
     self.TypeOfResourceImport = "Урожай"
     self.TypeOfResourceExport = "Пиво"
-    self.TypeOfResourceImportNumber = 0
 
 
   def ProductionProcess():
@@ -85,7 +82,6 @@ class MeatFactory(Factory):
     self.EfficiencyLossRate = 10 # недель это для теста
     self.TypeOfResourceImport = "Урожай"
     self.TypeOfResourceExport = "Mясо"
-    self.TypeOfResourceImportNumber = 0
 
 
   def ProductionProcess():
