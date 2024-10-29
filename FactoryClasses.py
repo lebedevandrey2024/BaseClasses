@@ -2,13 +2,13 @@ class Factory():
   def ___init___(.self):
 
     self.Squares = [] #список занимемых квадратов. в СвЕТОВЫХ КОДАХ [[001, 001, 001],[002, 001, 001]] смотри доску в https://miro.com/app/board/uXjVLNKZfEk=/
-    self.Area = self.Pos_x 
+    self.Area = len(self.Squares)
     
-    self.Effective
+    self.Effective = 0.99
     
     self.TypeOfResourceExport
     
-    self.Level #от 1 до 10
+    self.Level = 1 #от 1 до 10
     
     self.StockCapacityExport
     self.StockCapacityMaxExport
