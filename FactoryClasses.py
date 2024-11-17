@@ -1,7 +1,7 @@
 class Factory():
   def ___init___(.self):
 
-    self.Squares = [] #список занимемых квадратов. в СвЕТОВЫХ КОДАХ [[001, 001, 001],[002, 001, 001]] смотри доску в https://miro.com/app/board/uXjVLNKZfEk=/
+    self.Squares = [] #список занимаемых квадратов. в СвЕТОВЫХ КОДАХ [[001, 001, 001],[002, 001, 001]] смотри доску в https://miro.com/app/board/uXjVLNKZfEk=/
     self.Area = len(self.Squares)
     
     self.Effective = 0.99
